@@ -20,7 +20,7 @@ namespace FixedThreadPool
 
         void func(object num)//Функция потока, передаем параметр
         {
-            for (int i = 0; i < (int)num; i++)
+            for (int i = 1; i < (int)num; i++)
             {
                 Console.WriteLine(Thread.CurrentThread.Name + ": " + i);
                 Thread.Sleep(0);
