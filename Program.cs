@@ -23,7 +23,11 @@ namespace FixedThreadPool
             threadCount = Convert.ToInt32(args[1]);
 
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("run.exe {0} {1}", mainCount, threadCount);
+            Console.WriteLine("run.exe\nArguments:\n mainCount = {0}\n threadCount = {1}", mainCount, threadCount);
+
+            Console.WriteLine("Loops:");
+            myThread t1 = new myThread(" main", mainCount);
+            myThread t2 = new myThread(" thread", threadCount);
 
             Console.ReadKey();
         }
