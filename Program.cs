@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace FixedThreadPool
@@ -25,11 +26,18 @@ namespace FixedThreadPool
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("run.exe\nArguments:\n mainCount = {0}\n threadCount = {1}", mainCount, threadCount);
 
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("Loops:");
-            myThread t1 = new myThread(" main", mainCount);
+            //myThread t1 = new myThread(" main", mainCount);
             myThread t2 = new myThread(" thread", threadCount);
 
-            Console.ReadKey();
+            for (int i = 1; i <= (int)mainCount; i++)
+            {
+                Console.WriteLine(" main: " + i);
+                Thread.Sleep(0);
+            }
+
+            //Console.ReadKey();
         }
     }
 }
