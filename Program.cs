@@ -34,7 +34,7 @@ namespace FixedThreadPool
             for (int i = 1; i <= (int)mainCount; i++)
             {
                 Console.WriteLine(" main: " + i);
-                Thread.Sleep(0);
+                //Thread.Sleep(0);
             }
 
             //Console.ReadKey();
