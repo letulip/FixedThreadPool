@@ -11,6 +11,8 @@ namespace FixedThreadPool
     {
         static int mainCount;
         static int threadCount;
+
+        static WaitHandle[] waitHandles = new WaitHandle[] { new AutoResetEvent(false), new AutoResetEvent(false) };
         
         static void Main(string[] args)
         {
@@ -34,8 +36,10 @@ namespace FixedThreadPool
             for (int i = 1; i <= (int)mainCount; i++)
             {
                 Console.WriteLine(" main: " + i);
-                //Thread.Sleep(0);
+                //Thread.Sleep(0);                
             }
+
+            Console.WriteLine("All threads complete");
 
             //Console.ReadKey();
         }
